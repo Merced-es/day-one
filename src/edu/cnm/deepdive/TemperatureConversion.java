@@ -15,7 +15,8 @@ public class TemperatureConversion {
     } else {
       for (int  i = 0; i < args.length; i++) {
         double c = Double.parseDouble(args[i]);
-        System.out.println("Celsius " + c + " = " + convertC2F(c) + " Fahrenheit");
+        System.out
+            .println("Celsius " + c + " = " + convertC2F(c) + " Fahrenheit");
       }
     }
   }

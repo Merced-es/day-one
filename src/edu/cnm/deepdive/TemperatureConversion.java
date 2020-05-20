@@ -1,5 +1,9 @@
 package edu.cnm.deepdive;
 
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
+
 public class TemperatureConversion {
 
   private static final double CELSIUS_TO_FAHRENHEIT_SCALE = 9.0 / 5.0;
@@ -11,7 +15,8 @@ public class TemperatureConversion {
       double c = 100;
       double f = 32;
       System.out.println("Celsius " + c + " = " + convertC2F(c) + " Fahrenheit");
-      System.out.println("Fahrenheit " + f + " = " + convertF2C(f) + " Celsius");
+      System.out.println(
+          "Fahrenheit " + f + " = " + convertF2C(f) + " Celsius");
     } else {
       for (int  i = 0; i < args.length; i++) {
         double c = Double.parseDouble(args[i]);
@@ -47,6 +52,15 @@ public class TemperatureConversion {
       celsiusTemperatures[i] = celsius;
     }
     return celsiusTemperatures;
+  }
+
+  public static void convertInputToFahrenheit(InputStream input, PrintStream output) {
+    Scanner scanner = new Scanner(input);
+    while (true) {
+      double celsius = scanner.nextDouble();
+      double fahrenheit = convertC2F(celsius);
+      output.println(fahrenheit);
+    }
   }
 
 }
